@@ -29,17 +29,19 @@
 <hr/>
 
 <h2> Overview </h2>
+<p> University students often need to reserve rooms in buildings spread throughout the campus tailored to their specific needs. The president of a student club, for instance, might need to reserve a room with a projector, which can accommodate a crowd of at least a certain size.</p>
+<p> Currently, room reservations are controlled by a number of disparate systems that, at their core, involve the manual exchange of emails between a prospective user and administrator. To reserve a room in Wilson College, a student can currently submit an online <a href="http://www.princeton.edu/wilsoncollege/services/request-to-reserve-a-room/">form</a> on the Wilson college website. To reserve in Forbes college, the Forbes <a href="http://www.princeton.edu/forbescollege/whats-where/multi-purpose-room/">website</a> recommends stopping by the College office. Reserving a space in Frist campus center requires using another <a href="http://www.princeton.edu/uscheduling/schedorrform.html">form</a>.</p>
+<p>PUrr -- the Princeton University Room Registrar -- will consolidate these functions into a single, easy to use, online tool that allows students to browse university spaces by availability, facilities, location, and other relevant criterion and then easily request a space. It will allow administrators to set room availability and policies, approve or deny requests, and easily view upcoming reservations.</p>
+<p>A student user, after logging in through CAS, will see a screen dominated by a map of campus. A sidebar will give him or her the opportunity to select search criterion such as date, time, room size, available audiovisual equipment, etc. Upon updating the search criterion, building shown on the campus map will dynamically come in and out focus. Buildings with no available rooms fitting the search criteria will be greyed out or removed, where as building with rooms matching the criteria will appear in full color. Rolling the mouse over a building will pop up a blurb showing the available rooms, perhaps with a picture, description, information, and a "request reservation" link.</p>
+<p>After filling out a small form, the a reservation will be created with the status "pending approval". After approval (or denial) by a relevant administrator, the student will receive an email detailing their reservation.</p>
+<p>A student's upcoming room reservations will be also visible in a part of the site accessible from the main page.</p>
+<p>An administrator, after logging in, will see a welcome screen. From here he or she will be able to view and respond to the pending room requests appropriate to his or her position ( for instance a Forbes Dean will only see room requests relevant to Forbes College). The administrator will also see a calender view of the upcoming reservations. Like the search form for student requests, an administrator will be able to restrict the number of future events shown based on any number of search criterion.</p>
+<p>Initially, this system will only be used for reservable rooms in the residential colleges. However none of the code will be written in such a way as to preclude expansion to more building and spaces on campus under the direct control of different administrators. Pending successful implementation in the residential colleges, expansion will be considered.</p>
+<p>
+Furthermore, concurrent with this expansion out of the residential colleges, we may add support for more diverse user classes. For instance, professors often need to schedule rooms to hold research group meetings and workshops in. Currently these requests are handled on a department by department basis, which is largely appropriate. Once our system is operational in the residential colleges, we will demonstrate its utility to selected departmental staff responsible for room scheduling. At that point, if the capabilities of our system exceeds that which some of the academic departments are using and the relevant departmental staff show interest, we will expand the capabilities of our system to serve this class of users.</p>
+<p>Over the duration of the COS333 course, PUrr will run on the CS department servers (penguins) in one our group member's public_html folder. Pending true adoption by the residential colleges, it can be moved to a location of their choosing. It will run using by Apache Web Server on 64-bit Red Hat linux installations, and programmed in python using the django web framework. The user interface will be largely built with HTML and CSS working against the server side scripting in python. AJAX will be used to used to display some of the content, especially for the student search interface. Django's ORM will be used to wrap all of our database access into native python classes. This, combined with the use of Django's templating system will help us maintain strict separation between the model, view and controller components. For version control, we will use the git version control system. Project source code will be hosted on Github.</p>
 
-<p>University students often need to reserve rooms in buildings spread throughout the campus tailored to their specific needs. A club president might need a room with a projector, which can accommodate a crowd of at least a certain size. Or maybe a department head needs to reserve an auditorium with the proper presentation capabilities to get that mission critical conference rolling smoothly. PUrr,  or Princeton University Room Registrar, will be able to gather requirements from users and offer suggestions of rooms that would suit them.</p>
-
-<p>Currently, the only available solution is extremely rudimentary, as users can only send in request via e-mail to Dean ____________ . PUrr will give users a multitude of options to search for a room that is both available during the time of their choosing and custom tailored to meet their needs. They will be presented with a visual search page, that would allow them to choose a building, and subsequently room, based on what is available during the user specified time frame from a virtual campus map. The map will be interactive, starting by showing all potential room and buildings before the user begins to specify their needs. As the user begins to input her requirements, the rooms that match their needs will remain on the interactive map, while the others are removed. The results will be real-time, removing rooms as soon as they are booked and follow a first come, first served basis. </p>
-
-<p>PUrr will initially be running on the Computer Science s Penguins servers in one our group s public_html folder, and will later be moved to a location of s choice. Our project will be running on the Apache Web Server on 64-bit Red Hat linux installations managed by the Computer Science department. To handle dynamic content from the server side, we will be using Python. On the client end, we will be using a mix of javascript, AJAX, CSS, and HTML5 to properly display the necessary information. As a reach goal, we will attempt to write an iOS application, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store. </p>
-<hr/>
-
-
-<h2> Requirements </h2>
-<p> This web application will make it possible to easily reserve rooms on campus. From the perspective of a student -- say the president of a small student club -- this system will make it easy and painless for her to find an open room that meets her specifications (availability, size, has a projector, etc).
+<p>As a reach goal, we will write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
 <hr/>
 
 
@@ -50,9 +52,13 @@
 <hr/>
 
 <h2> Milestones </h2>
+<p> By the begining of spring break will be fully set up with the Djano framework, our git repositrory, and mysql databse.</p>
+<p> By the end of spring break we will have finished the basic site organization, layound, and configured the database.</p>
+<p> Further goals include implementation of the search interface in a simple (non ajaxified) way, implementation of the approval mechanism by adjministrators, </p>
 <hr/>
 
 <h2> Risks and Open Issues </h2>
+<p> Maintaining close coordination with Dean _____ will be essential </p.
 <hr/>
 
 <h2> Reach Features </h2>
