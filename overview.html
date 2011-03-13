@@ -24,7 +24,8 @@
  <a href="mailto:rmcgibbo@princeton.edu">Robert McGibbon</a>,
  <a href="ijulien@Princeton.EDU">Isaac Julien</a>
 <br />
-<strong> Project Manager: </strong> ?
+<strong> Project Manager: </strong>
+<a href="mailto:cadamuro.gabriel@gmail.com">Gabe Cadamuro</a>
 </p>
 <hr/>
 
@@ -32,6 +33,12 @@
 <p> University students often need to reserve rooms in buildings spread throughout the campus tailored to their specific needs. The president of a student club, for instance, might need to reserve a room with a projector, which can accommodate a crowd of at least a certain size.</p>
 <p> Currently, room reservations are controlled by a number of disparate systems that, at their core, involve the manual exchange of emails between a prospective user and administrator. To reserve a room in Wilson College, a student can currently submit an online <a href="http://www.princeton.edu/wilsoncollege/services/request-to-reserve-a-room/">form</a> on the Wilson college website. To reserve in Forbes college, the Forbes <a href="http://www.princeton.edu/forbescollege/whats-where/multi-purpose-room/">website</a> recommends stopping by the College office. Reserving a space in Frist campus center requires using another <a href="http://www.princeton.edu/uscheduling/schedorrform.html">form</a>.</p>
 <p>PUrr -- the Princeton University Room Registrar -- will consolidate these functions into a single, easy to use, online tool that allows students to browse university spaces by availability, facilities, location, and other relevant criterion and then easily request a space. It will allow administrators to set room availability and policies, approve or deny requests, and easily view upcoming reservations.</p>
+<hr/>
+
+<h2> Requirements </h2>
+<p> PUrr will provide an easy and centralized tool for student groups and university officials to reserve rooms in Wilson College.</p>
+
+<h2> Functionality </h2>
 <p>A student user, after logging in through CAS, will see a screen dominated by a map of campus. A sidebar will give him or her the opportunity to select search criterion such as date, time, room size, available audiovisual equipment, etc. Upon updating the search criterion, building shown on the campus map will dynamically come in and out focus. Buildings with no available rooms fitting the search criteria will be greyed out or removed, where as building with rooms matching the criteria will appear in full color. Rolling the mouse over a building will pop up a blurb showing the available rooms, perhaps with a picture, description, information, and a "request reservation" link.</p>
 <p>After filling out a small form, the a reservation will be created with the status "pending approval". After approval (or denial) by a relevant administrator, the student will receive an email detailing their reservation.</p>
 <p>A student's upcoming room reservations will be also visible in a part of the site accessible from the main page.</p>
@@ -41,13 +48,7 @@
 Furthermore, concurrent with this expansion out of the residential colleges, we may add support for more diverse user classes. For instance, professors often need to schedule rooms to hold research group meetings and workshops in. Currently these requests are handled on a department by department basis, which is largely appropriate. Once our system is operational in the residential colleges, we will demonstrate its utility to selected departmental staff responsible for room scheduling. At that point, if the capabilities of our system exceeds that which some of the academic departments are using and the relevant departmental staff show interest, we will expand the capabilities of our system to serve this class of users.</p>
 <p>Over the duration of the COS333 course, PUrr will run on the CS department servers (penguins) in one our group member's public_html folder. Pending true adoption by the residential colleges, it can be moved to a location of their choosing. It will run using by Apache Web Server on 64-bit Red Hat linux installations, and programmed in python using the django web framework. The user interface will be largely built with HTML and CSS working against the server side scripting in python. AJAX will be used to used to display some of the content, especially for the student search interface. Django's ORM will be used to wrap all of our database access into native python classes. This, combined with the use of Django's templating system will help us maintain strict separation between the model, view and controller components. For version control, we will use the git version control system. Project source code will be hosted on Github.</p>
 
-<p>As a reach goal, we will write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
-<hr/>
 
-
-<h2> Functionality </h2>
-<p> I feel like we kindof included this in the overview? Not really sure what to say here... I guess we should think if there are any more 'pages' or 'screens' that are necessary.</p>
-<p> For instance how do we got about registering users. Can anyone reserve a room, or is it only people affiliated with a recognized club (i.e. <a href="http://www.princeton.edu/uscheduling/schedorrform.html">http://www.princeton.edu/uscheduling/schedorrform.html</a>). If so, how do we authenticate those people, or do we just leave it up to the administators in the approve/deny thing? </p>
 <hr/>
 
 <h2> Design </h2>
@@ -67,7 +68,10 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 <hr/>
 
 <h2> Reach Features </h2>
-iPhone app, expansion to department spaces / professors...
-
+Once we have our basic set of features up and running, we plan to add several additional features as time permits. One idea is to include pictures of each room, so that someone browsing for a room to reserve can see what each room looks like before making a choice. We also hope to allow users to leave comments on the rooms that they reserve. This would give other users more information and warn them about problems with the room (broken projector, etc.).
+<p>
+We also hope to extend this application to other colleges and departments. PUrr's design would allow for this without any changes to most of the underlying system. We would only need to change the building or department-specific elements of the user interface, such as room features and user authentication.
+</p>
+<p>As a reach goal, we will write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
 </body>
 </html>
