@@ -141,7 +141,7 @@ Milestones are split into topics. A is the student side, B is the database/serve
 <p>Milestone A1: Student website basic request function. The milestone here is being able to communicate with our server (holding a test database at this point) and make a basic room request and have that request be noted in the db or have a rejection message be sent back if that slot is taken.
 Milestone A2: Student website search feature implemented. Students are able to search for rooms based on availability, capacity and features on a test database.
 Milestone A3: Student website search feature feedback. Student group leaders will be given a link to the beta website and asked how well the website performs given a simulated query. At this point the server would be using the real database.
-Milestone A4: Permissions implemented. All requests now run through CAS as well as any additional permissions requested by administrator. Requires C??? 
+Milestone A4: Permissions implemented. All requests now run through CAS as well as any additional permissions requested by administrator so students should receive appropriate rreplies conditioned on the credentials offered. Requires C3
 Milestone A5: Room pages added. All rooms will have a page displaying information, calendar info and a picture. Requires B2.</p>
 
 <p>Milestone B1: Set up a skeleton server on Penguins. This will contain all the fields mentioned in 'Design' but will just have a few test rooms at inception. This does not include all the administrator control on what students can see/edit.
@@ -162,9 +162,10 @@ Milestone D2: Port to Princeton university iPhone App. Requires A5, C4 and C5.</
 <hr/>
 
 <h2> Risks and Open Issues </h2>
-<p> Maintaining close coordination with Dean _____ will be essential and tricky. </p>
+<p> Maintaining close coordination with Dean Herschbach will be essential and tricky. </p>
 <p> Learning the Django framework. </p>
 <p> Interfacing sucesfully with the university authentication system, not just for users, but for 'valid student groups'.</p>
+<p> Trying to ennumerate the different types of permissions and credentials not covered by CAS.</p>
 <p> Getting CAS and Django to work together. I saw <a href="http://code.google.com/p/django-cas/">this</a>, but we'll see.</p>
 <p> Probably a lot of other stuff that we haven't thought of...</p>
 <hr/>
