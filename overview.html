@@ -54,6 +54,77 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 <hr/>
 
 <h2> Design </h2>
+<p> For the databse, we will use Django's ORM wrapped around a MqSQL database. This structure will help us avoid having to write any MySQL, and will abstract away the interaction with the databse into natural python classes</p>
+<p> The database will be roughly structured as followed. There's some uncertainty because we're not clear exactly what's contained in Dean _____'s room databse. </p>
+<p> * represnts a primary key, ** represents a foreign key </p>
+<ul>
+  <li>
+    rooms
+    <ul>
+      <li> id* </li>
+      <li> location #human readable location on campus</li>
+      <li> map_key #key that gives its location w/r/t the campus map </li>
+      <li> description </li>
+      <li> features #features of the room (audiovisual, etc) [should this be another table?]</li>
+      <li> department_id** #the relevant administrator group responsible for the room</li>
+      <li> image(s) </li>
+    </ul>
+  </li>
+  <li>
+    students
+    <ul>
+      <li> id* </li>
+      <li> netid </li>
+      <li> sgroup_id** </li>
+      <li> first_name </li>
+      <li> last_name </li>
+    </ul>
+  </li>
+  <li>
+    sgroups
+    <ul>
+      <li> id* </li>
+      <li> name </li>
+      <li> status #status code corresponding to the rank of student groups. Maybe some groups have higher 'permissions' than others?</li>
+    </ul>
+  </li>
+  <li>
+    admins
+    <ul>
+      <li> id* </li>
+      <li> netid </li>
+      <li> department_id** </li>
+      <li> first_name </li>
+      <li> last_name </li>
+    </ul>
+  </li>
+  <li>
+    departments
+    <ul>
+       <li> id* </id>
+       <li> name </li>
+    </ul>
+  </li>
+  <li>
+    requests
+    <ul>
+      <li> id* </li>
+      <li> student_id** #requesting student</li>
+      <li> admin_id** #the administrator who responded to the request (or null if pending)</li>
+      <li> room_id** </li>
+      <li> date_created </li>
+      <li> date </li>
+      <li> start_date #time that the room was requested for</li>
+      <li> end_date </li>
+      <li> status #enum {pending, approved, denied} </li>
+      <li> action_date #when was the request acted upon </li>
+      <li> notes #special text submitted in the request</li>
+    </ul>
+  </li>
+  <li>
+    some tables are going to be necessary to keep track of a calendar. What dates/times are available to be booked for? What times are off limits? This needs to be done on both a global basis (you can only book rooms while school is in session, etc), and also a local basis for each room (wilson college common room is out for construction between these dates)
+  </li> 
+</ul>
 <p> [More description of what the database will like like is needed here. What are the tables, what are the fields, etc]
 <hr/>
 
@@ -65,7 +136,9 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 
 <h2> Risks and Open Issues </h2>
 <p> Maintaining close coordination with Dean _____ will be essential and tricky. </p>
-<p> None of us have ever used django before (right?) </p>
+<p> Learning the Django framework. </p>
+<p> Interfacing sucesfully with the university authentication system, not just for users, but for 'valid student groups'.</p>
+<p> Getting CAS and Django to work together. I saw <a href="http://code.google.com/p/django-cas/">this</a>, but we'll see.</p>
 <p> Probably a lot of other stuff that we haven't thought of...</p>
 <hr/>
 
@@ -74,6 +147,6 @@ Once we have our basic set of features up and running, we plan to add several ad
 <p>
 We also hope to extend this application to other colleges and departments. PUrr's design would allow for this without any changes to most of the underlying system. We would only need to change the building or department-specific elements of the user interface, such as room features and user authentication.
 </p>
-<p>As a reach goal, we will write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
+<p>We also hope to write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
 </body>
 </html>
