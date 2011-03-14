@@ -60,7 +60,7 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 
 <h2> Design </h2>
 <p> For the databse, we will use Django's ORM wrapped around a MqSQL database. This structure will help us avoid having to write any MySQL, and will abstract away the interaction with the databse into natural python classes</p>
-<p> The database will be roughly structured as followed. There's some uncertainty because we're not clear exactly what's contained in Dean _____'s room databse. </p>
+<p> The database will be roughly structured as followed. There's some uncertainty because we're not clear exactly what's contained in Dean Herschbach's room databse. </p>
 <p> * represnts a primary key, ** represents a foreign key </p>
 <ul>
   <li>
@@ -138,23 +138,23 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 <p>Our aim in designing these milestones was to provide a set of verifiable properties that incrementally build on each other. In this way we would hope to have a functional (although basic) system early on and successively refine it instead of drawing everything together late in the semester.
 Milestones are split into topics. A is the student side, B is the database/server side of things, C is the administrator side of things and D represents 'reach' features which heavily depend on the previous three.</p>
 
-<p>Milestone A1: Student website basic request function. The milestone here is being able to communicate with our server (holding a test database at this point) and make a basic room request and have that request be noted in the db or have a rejection message be sent back if that slot is taken.
-Milestone A2: Student website search feature implemented. Students are able to search for rooms based on availability, capacity and features on a test database.
-Milestone A3: Student website search feature feedback. Student group leaders will be given a link to the beta website and asked how well the website performs given a simulated query. At this point the server would be using the real database.
-Milestone A4: Permissions implemented. All requests now run through CAS as well as any additional permissions requested by administrator so students should receive appropriate rreplies conditioned on the credentials offered. Requires C3
-Milestone A5: Room pages added. All rooms will have a page displaying information, calendar info and a picture. Requires B2.</p>
+<p>Milestone A1: Student website basic request function. The milestone here is being able to communicate with our server (holding a test database at this point) and make a basic room request and have that request be noted in the db or have a rejection message be sent back if that slot is taken.</p>
+<p>Milestone A2: Student website search feature implemented. Students are able to search for rooms based on availability, capacity and features on a test database.
+</p><p>Milestone A3: Student website search feature feedback. Student group leaders will be given a link to the beta website and asked how well the website performs given a simulated query. At this point the server would be using the real database.</p>
+<p>Milestone A4: Permissions implemented. All requests now run through CAS as well as any additional permissions requested by administrator so students should receive appropriate rreplies conditioned on the credentials offered. Requires C3</p>
+<p>Milestone A5: Room pages added. All rooms will have a page displaying information, calendar info and a picture. Requires B2.</p>
 
-<p>Milestone B1: Set up a skeleton server on Penguins. This will contain all the fields mentioned in 'Design' but will just have a few test rooms at inception. This does not include all the administrator control on what students can see/edit.
-Milestone B2: Add all the rooms (and their relevant properties) that we will be administering to the database. This may include adding information (e.g the geographic data) by hand.
-Milestone B3: Ask Dean Herschbach for feedback on basic design (without administrative control)
-Milestone B4: Incorporate administrator controls. This means students can only book a few weeks in advance and that certain reservations require manual approval.</p>
+<p>Milestone B1: Set up a skeleton server on Penguins. This will contain all the fields mentioned in 'Design' but will just have a few test rooms at inception. This does not include all the administrator control on what students can see/edit.</p>
+<p>Milestone B2: Add all the rooms (and their relevant properties) that we will be administering to the database. This may include adding information (e.g the geographic data) by hand.</p>
+<p>Milestone B3: Ask Dean Herschbach for feedback on basic design (without administrative control)</p>
+<p>Milestone B4: Incorporate administrator controls. This means students can only book a few weeks in advance and that certain reservations require manual approval.</p>
 
-<p>Milestone C1: Website is built and able to view calendars for all rooms in the database. At this point, the test databse is fine.
-Milestone C2: Administrators can now start specifying the aforementioned restrictions and required credentials on any room. 
-Milestone C3: Same as C3
-Milestone C4: Incorporate the features for setting/changing the rules for booking a certain room. Integrates with B4
-Milestone C5: Implement different permissions for different departments/colleges. For example after this, a Forbes official will no longer be able to modify the rules for a Wilson college owned room. 
-Milestone C6: Solicit feedback on updates model from multiple administrators.</p>
+<p>Milestone C1: Website is built and able to view calendars for all rooms in the database. At this point, the test databse is fine.</p>
+<p>Milestone C2: Administrators can now start specifying the aforementioned restrictions and required credentials on any room. </p>
+<p>Milestone C3: Same as C3</p>
+<p>Milestone C4: Incorporate the features for setting/changing the rules for booking a certain room. Integrates with B4</p>
+<p>Milestone C5: Implement different permissions for different departments/colleges. For example after this, a Forbes official will no longer be able to modify the rules for a Wilson college owned room. </p>
+<p>Milestone C6: Solicit feedback on updates model from multiple administrators.</p>
 
 <p>Milestone D1: Add the interactive Princeton map that allows one to either select a room visually or allows one to see where a selected room on campus is. Requires A2 and B2.
 Milestone D2: Port to Princeton university iPhone App. Requires A5, C4 and C5.</p>
