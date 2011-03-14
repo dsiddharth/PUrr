@@ -137,27 +137,49 @@ Furthermore, concurrent with this expansion out of the residential colleges, we 
 
 <p>Our aim in designing these milestones was to provide a set of verifiable properties that incrementally build on each other. In this way we would hope to have a functional (although basic) system early on and successively refine it instead of drawing everything together late in the semester.
 Milestones are split into topics. A is the student side, B is the database/server side of things, C is the administrator side of things and D represents 'reach' features which heavily depend on the previous three.</p>
+<br>
 
 <p>Milestone A1: Student website basic request function. The milestone here is being able to communicate with our server (holding a test database at this point) and make a basic room request and have that request be noted in the db or have a rejection message be sent back if that slot is taken.</p>
-<p>Milestone A2: Student website search feature implemented. Students are able to search for rooms based on availability, capacity and features on a test database.
-</p><p>Milestone A3: Student website search feature feedback. Student group leaders will be given a link to the beta website and asked how well the website performs given a simulated query. At this point the server would be using the real database.</p>
+
+<p>Milestone A2: Student website search feature implemented. Students are able to search for rooms based on availability, capacity and features on a test database.</p>
+
+<p>Milestone A3: Student website search feature feedback. Student group leaders will be given a link to the beta website and asked how well the website performs given a simulated query. At this point the server would be using the real database.</p>
+
 <p>Milestone A4: Permissions implemented. All requests now run through CAS as well as any additional permissions requested by administrator so students should receive appropriate rreplies conditioned on the credentials offered. Requires C3</p>
+
 <p>Milestone A5: Room pages added. All rooms will have a page displaying information, calendar info and a picture. Requires B2.</p>
+<br>
 
 <p>Milestone B1: Set up a skeleton server on Penguins. This will contain all the fields mentioned in 'Design' but will just have a few test rooms at inception. This does not include all the administrator control on what students can see/edit.</p>
 <p>Milestone B2: Add all the rooms (and their relevant properties) that we will be administering to the database. This may include adding information (e.g the geographic data) by hand.</p>
 <p>Milestone B3: Ask Dean Herschbach for feedback on basic design (without administrative control)</p>
 <p>Milestone B4: Incorporate administrator controls. This means students can only book a few weeks in advance and that certain reservations require manual approval.</p>
-
+<br>
 <p>Milestone C1: Website is built and able to view calendars for all rooms in the database. At this point, the test databse is fine.</p>
 <p>Milestone C2: Administrators can now start specifying the aforementioned restrictions and required credentials on any room. </p>
-<p>Milestone C3: Same as C3</p>
+<p>Milestone C3: Same as B3</p>
 <p>Milestone C4: Incorporate the features for setting/changing the rules for booking a certain room. Integrates with B4</p>
 <p>Milestone C5: Implement different permissions for different departments/colleges. For example after this, a Forbes official will no longer be able to modify the rules for a Wilson college owned room. </p>
 <p>Milestone C6: Solicit feedback on updates model from multiple administrators.</p>
-
+<br>
 <p>Milestone D1: Add the interactive Princeton map that allows one to either select a room visually or allows one to see where a selected room on campus is. Requires A2 and B2.
-Milestone D2: Port to Princeton university iPhone App. Requires A5, C4 and C5.</p>
+</p><p>Milestone D2: Port to Princeton university iPhone App. Requires A5, C4 and C5.</p>
+
+<br><p> Given these milestones we have given a realistic schedule of work below. This model timeline gives us time to accomplish some of our 'reach' goals and also
+includes slots for preparing the final presentation. If we find that we are getting significantly ahead: we may move up objectives with the goal
+of being able to implement D2 in time for the beta. </p>
+
+<ul>
+ <li> March 13th - March 20th: Meet with Dean Herschbach to discuss project overview document, A1 and B1 complete. Complete B2 if list is available
+in its entirety.</li>
+ <li> March 21st - March 28th: B2 and A2.</li>
+ <li> March 29th - April 4th: A3 and C1. </li>
+ <li> April 4th - April 10th: C2 and A4 </li>
+ <li> April 11th - April 17th: C4/B4 followed by B3/C3 </li>
+ <li> April 18th - April 24th: A5 + C6 + Alpha demo preperation </li>
+ <li> April 25th - May 1st: D1 +  beta preperation </li> 
+ <li> May 2nd - May 8th: C5  + final presentation </li>
+</ul>
 
 <hr/>
 
@@ -166,15 +188,16 @@ Milestone D2: Port to Princeton university iPhone App. Requires A5, C4 and C5.</
 <p> Learning the Django framework. </p>
 <p> Interfacing sucesfully with the university authentication system, not just for users, but for 'valid student groups'.</p>
 <p> Trying to ennumerate the different types of permissions and credentials not covered by CAS.</p>
-<p> Getting CAS and Django to work together. I saw <a href="http://code.google.com/p/django-cas/">this</a>, but we'll see.</p>
-<p> Probably a lot of other stuff that we haven't thought of...</p>
+<p> Getting CAS and Django to work together. <a href="http://code.google.com/p/django-cas/">This</a> might help us. </p>
+<p> The room database may not include some of the information we think is important for students.</p>
+<p> None of us have any familarity with programming iOS apps (see 'Reach Features')</p>
 <hr/>
 
 <h2> Reach Features </h2>
 Once we have our basic set of features up and running, we plan to add several additional features as time permits. One idea is to include pictures of each room, so that someone browsing for a room to reserve can see what each room looks like before making a choice. We also hope to allow users to leave comments on the rooms that they reserve. This would give other users more information and warn them about problems with the room (broken projector, etc.).
 <p>
-We also hope to extend this application to other colleges and departments. PUrr's design would allow for this without any changes to most of the underlying system. We would only need to change the building or department-specific elements of the user interface, such as room features and user authentication.
+We also hope to extend this application to other colleges and departments. PUrr's design would allow for this without any changes to most of the underlying system. We would only need to change the building or department-specific elements of the user interface, such as room features and user authentication. An ideal candidate would be the Music department building, where booking rooms for music group practice is problematic.
 </p>
-<p>We also hope to write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store.</p>
+<p>We also hope to write an iOS application having much of the same functionality described above, which will either become an extension to the Princeton University app or its own separate app in the iTunes Store. This is something Dean Herschbach suggested and would take a fair amount of effort.</p>
 </body>
 </html>
